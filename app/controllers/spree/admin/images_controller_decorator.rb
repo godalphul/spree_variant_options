@@ -1,13 +1,13 @@
 Spree::Admin::ImagesController.class_eval do
-  alias_method :super_load_data, :load_edit_data
+ # alias_method :super_load_data, :load_edit_data
 
   # Called in a before_filter
-  def load_edit_data
-    super_load_data
-
-    @grouped_option_values ||= @product.option_values.group_by(&:option_type)
-    @grouped_option_values.sort_by { |option_type, option_values| option_type.position }
-  end
+ # def load_edit_data
+ # #  super_load_data
+ #   Product.find(params[:id])
+ #   @grouped_option_values ||= @product.option_values.group_by(&:option_type)
+ #   @grouped_option_values.sort_by { |option_type, option_values| option_type.position }
+ # end
 
   # Called in a create.before
   def set_viewable
